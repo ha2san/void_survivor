@@ -22,14 +22,14 @@ Defeat waves of asteroids and drones, collect power-ups, and survive as long as 
 
 | Action              | Key         |
 |---------------------|-------------|
-| Turn left / right   | ← / →       |
-| Thrust forward      | ↑           |
-| Reverse / brake     | ↓           |
+| Turn left / right   | a / d       |
+| Thrust forward      | w           |
+| Reverse / brake     | s           |
 | Shoot               | Space       |
-| Shield (hold)       | E           |
-| Reverse boost       | R           |
-| Slow motion (hold)  | S           |
-| Fire homing missile | F           |
+| Shield (hold)       | I           |
+| Reverse boost       | K           |
+| Slow motion (hold)  | H           |
+| Fire homing missile | J           |
 | Fire piercing laser | L           |
 | Pause               | P           |
 | Menu / Exit         | Escape      |
@@ -55,18 +55,20 @@ Defeat waves of asteroids and drones, collect power-ups, and survive as long as 
 ### Native (Desktop)
 ```bash
 cargo run --release
-
+```
 
 ### WebAssembly (WASM)
 
 Macroquad supports compilation to WASM. To build and serve the game in a browser:
 
-1. **Add the WASM target**  
-   `rustup target add wasm32-unknown-unknown`
-
+1. **Add the WASM target**
+   ```bash
+   rustup target add wasm32-unknown-unknown
+   ```
 2. **Build the WASM binary**  
-   `cargo build --release --target wasm32-unknown-unknown`
-
+   ```bash
+   cargo build --release --target wasm32-unknown-unknown
+   ```
 3. **Copy the generated `.wasm` file to the project root or a `web` folder**  
    The game expects `void_survivor.wasm` (as defined in `index.html`).  
    ```bash
