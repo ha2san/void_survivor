@@ -1,4 +1,3 @@
-```markdown
 # Void Survivor
 
 A fast-paced space shooter written in Rust with [Macroquad](https://macroquad.rs/).  
@@ -56,7 +55,7 @@ Defeat waves of asteroids and drones, collect power-ups, and survive as long as 
 ### Native (Desktop)
 ```bash
 cargo run --release
-```
+
 
 ### WebAssembly (WASM)
 
