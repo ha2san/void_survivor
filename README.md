@@ -22,14 +22,14 @@ Defeat waves of asteroids and drones, collect power-ups, and survive as long as 
 
 | Action              | Key         |
 |---------------------|-------------|
-| Turn left / right   | ← / →       |
-| Thrust forward      | ↑           |
-| Reverse / brake     | ↓           |
+| Turn left / right   | a / d       |
+| Thrust forward      | w           |
+| Reverse / brake     | s           |
 | Shoot               | Space       |
-| Shield (hold)       | E           |
-| Reverse boost       | R           |
-| Slow motion (hold)  | S           |
-| Fire homing missile | F           |
+| Shield (hold)       | I           |
+| Reverse boost       | K           |
+| Slow motion (hold)  | H           |
+| Fire homing missile | J           |
 | Fire piercing laser | L           |
 | Pause               | P           |
 | Menu / Exit         | Escape      |
