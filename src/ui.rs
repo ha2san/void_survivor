@@ -76,10 +76,10 @@ impl UI {
 
         // Indicateurs d'état (bonus actifs)
         Self::draw_status_indicators(game);
-        
+
         // Indicateurs d'armes
         Self::draw_weapon_indicators(game);
-        
+
         // Raccourcis clavier
         Self::draw_controls();
     }
@@ -87,7 +87,7 @@ impl UI {
     /// Dessine les indicateurs de bonus actifs
     fn draw_status_indicators(game: &Game) {
         let mut y_offset = 100.0;
-        
+
         if game.ship.slowmo_active {
             draw_text(
                 &format!("SLOW-MO: {:.1}s", game.ship.slowmo_energy.time),
@@ -98,7 +98,7 @@ impl UI {
             );
             y_offset += 25.0;
         }
-        
+
         if !game.ship.rapid_fire_timer.ready() {
             draw_text(
                 &format!("TIR RAPIDE: {:.1}s", game.ship.rapid_fire_timer.time),
@@ -109,7 +109,7 @@ impl UI {
             );
             y_offset += 25.0;
         }
-        
+
         if !game.ship.reverse_boost_timer.ready() {
             draw_text(
                 "RECUL BOOSTÉ!",
@@ -120,7 +120,7 @@ impl UI {
             );
             y_offset += 25.0;
         }
-        
+
         if game.ship.is_invincible() {
             draw_text(
                 &format!("INVINCIBLE: {:.1}s", game.ship.invincible_timer.time),
@@ -142,7 +142,7 @@ impl UI {
             20.,
             ORANGE,
         );
-        
+
         if !game.weapons.missile_cooldown.ready() {
             draw_text(
                 &format!("({:.1}s)", game.weapons.missile_cooldown.time),
@@ -156,7 +156,7 @@ impl UI {
         // Laser
         let laser_color = if game.weapons.laser.cooldown.ready() { RED } else { GRAY };
         draw_text("LASER: ", 20., 200., 20., laser_color);
-        
+
         if game.weapons.laser.active {
             draw_text("ACTIF", 90., 200., 20., RED);
         } else if !game.weapons.laser.cooldown.ready() {
@@ -177,12 +177,12 @@ impl UI {
         draw_text(
             &format!(
                 "{}:PAUSE | {}:BOUCLIER | {}:RECUL | {}:SLOW-MO | {}:MISSILE | {}:LASER",
-                key_to_string(KEY_PAUSE),
-                key_to_string(KEY_SHIELD),
-                key_to_string(KEY_REVERSE_BOOST),
-                key_to_string(KEY_SLOWMO),
-                key_to_string(KEY_MISSILE),
-                key_to_string(KEY_LASER)
+                format!("{:?}", KEY_PAUSE),
+                format!("{:?}", KEY_SHIELD),
+                format!("{:?}", KEY_REVERSE_BOOST),
+                format!("{:?}", KEY_SLOWMO),
+                format!("{:?}", KEY_MISSILE),
+                format!("{:?}", KEY_LASER)
             ),
             screen_width() / 2. - 280.,
             screen_height() - 20.,
@@ -191,46 +191,84 @@ impl UI {
         );
     }
 
+
     // -------------------------------------------------------------------------
     // ÉCRANS DE MENU
     // -------------------------------------------------------------------------
 
     /// Dessine l'écran titre (menu principal)
+    // =============================================================================
+    // SCREEN: MAIN MENU
+    // =============================================================================
+
     pub fn draw_menu(high_score: i32) {
         Self::draw_text_centered("Void Survivor", screen_height() * 0.3, 48., YELLOW);
         Self::draw_text_centered("CONTRÔLES:", screen_height() * 0.45, 30., WHITE);
+
+        // Mouvements : les touches exactes depuis consts.rs
         Self::draw_text_centered(
-            "← → : Tourner | ↑ : Avancer | ↓ : Reculer",
+            &format!(
+                "{} / {} : Tourner | {} : Avancer | {} : Reculer",
+                format!("{:?}", KEY_LEFT),
+                format!("{:?}", KEY_RIGHT),
+                format!("{:?}", KEY_UP),
+                format!("{:?}", KEY_DOWN)
+            ),
             screen_height() * 0.5,
             20.,
             GRAY,
         );
+
+        // Tir, bouclier, recul boosté
         Self::draw_text_centered(
-            "ESPACE : Tirer | E : Bouclier | R : Recul rapide",
+            &format!(
+                "{} : Tirer | {} : Bouclier | {} : Recul rapide",
+                format!("{:?}", KEY_SHOOT),
+                format!("{:?}", KEY_SHIELD),
+                format!("{:?}", KEY_REVERSE_BOOST)
+            ),
             screen_height() * 0.55,
             20.,
             GRAY,
         );
+
+        // Slow-motion, pause, menu
         Self::draw_text_centered(
-            "S : Slow-motion (limité) | P : Pause | M : Menu",
+            &format!(
+                "{} : Slow‑motion (limité) | {} : Pause | {} : Menu",
+                format!("{:?}", KEY_SLOWMO),
+                format!("{:?}", KEY_PAUSE),
+                format!("{:?}", KEY_MENU)
+            ),
             screen_height() * 0.6,
             20.,
             GRAY,
         );
+
+        // Missile, laser
         Self::draw_text_centered(
-            "F : Missile téléguidé | L : Laser perçant",
+            &format!(
+                "{} : Missile téléguidé | {} : Laser perçant",
+                format!("{:?}", KEY_MISSILE),
+                format!("{:?}", KEY_LASER)
+            ),
             screen_height() * 0.65,
             20.,
             GRAY,
         );
+
         Self::draw_text_centered(
             &format!("MEILLEUR SCORE: {}", high_score),
             screen_height() * 0.75,
             28.,
             GOLD,
         );
+
         Self::draw_text_centered(
-            "APPUYEZ SUR [ENTRÉE] POUR COMMENCER",
+            &format!(
+                "APPUYEZ SUR [{}] POUR COMMENCER",
+                format!("{:?}", KEY_START)
+            ),
             screen_height() * 0.85,
             28.,
             GREEN,
@@ -247,7 +285,7 @@ impl UI {
             screen_height(),
             Color::new(0., 0., 0., 0.7),
         );
-        
+
         Self::draw_text_centered("PAUSE", screen_height() * 0.4, 50., YELLOW);
         Self::draw_text_centered("P : REPRENDRE", screen_height() * 0.5, 30., WHITE);
         Self::draw_text_centered("ECHAP : MENU", screen_height() * 0.55, 30., WHITE);
@@ -322,26 +360,3 @@ impl UI {
     }
 }
 
-// -----------------------------------------------------------------------------
-// CONVERSION TOUCHE -> TEXTE POUR L'AFFICHAGE
-// -----------------------------------------------------------------------------
-
-/// Convertit un code de touche en chaîne de caractères lisible
-pub fn key_to_string(key: KeyCode) -> &'static str {
-    match key {
-        KEY_UP => "W",
-        KEY_DOWN => "S",
-        KEY_LEFT => "A",
-        KEY_RIGHT => "D",
-        KEY_SHOOT => "ESPACE",
-        KEY_SHIELD => "I",
-        KEY_REVERSE_BOOST => "K",
-        KEY_SLOWMO => "H",
-        KEY_MISSILE => "J",
-        KEY_LASER => "L",
-        KEY_PAUSE => "P",
-        KEY_MENU => "ECHAP",
-        KEY_START => "ENTRÉE",
-        _ => "?",
-    }
-}
