@@ -1,4 +1,3 @@
-```markdown
 # Void Survivor
 
 A fast-paced space shooter written in Rust with [Macroquad](https://macroquad.rs/).  
@@ -56,7 +55,7 @@ Defeat waves of asteroids and drones, collect power-ups, and survive as long as 
 ### Native (Desktop)
 ```bash
 cargo run --release
-```
+
 
 ### WebAssembly (WASM)
 
@@ -69,7 +68,7 @@ Macroquad supports compilation to WASM. To build and serve the game in a browser
    `cargo build --release --target wasm32-unknown-unknown`
 
 3. **Copy the generated `.wasm` file to the project root or a `web` folder**  
-   The game expects `kill.wasm` (as defined in `index.html`).  
+   The game expects `void_survivor.wasm` (as defined in `index.html`).  
    ```bash
    cp target/wasm32-unknown-unknown/release/void_survivor.wasm .
    ```
