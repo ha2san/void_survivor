@@ -329,15 +329,15 @@ impl UI {
 /// Convertit un code de touche en chaîne de caractères lisible
 pub fn key_to_string(key: KeyCode) -> &'static str {
     match key {
-        KEY_UP => "↑",
-        KEY_DOWN => "↓",
-        KEY_LEFT => "←",
-        KEY_RIGHT => "→",
+        KEY_UP => "W",
+        KEY_DOWN => "S",
+        KEY_LEFT => "A",
+        KEY_RIGHT => "D",
         KEY_SHOOT => "ESPACE",
-        KEY_SHIELD => "E",
-        KEY_REVERSE_BOOST => "R",
-        KEY_SLOWMO => "S",
-        KEY_MISSILE => "F",
+        KEY_SHIELD => "I",
+        KEY_REVERSE_BOOST => "K",
+        KEY_SLOWMO => "H",
+        KEY_MISSILE => "J",
         KEY_LASER => "L",
         KEY_PAUSE => "P",
         KEY_MENU => "ECHAP",

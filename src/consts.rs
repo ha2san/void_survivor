@@ -8,17 +8,17 @@ use macroquad::prelude::*;
 // CONTRÔLES (TOUCHES) - MODIFIABLES ICI
 // -----------------------------------------------------------------------------
 pub const KEY_SHOOT: KeyCode = KeyCode::Space;           // Tirer
-pub const KEY_SHIELD: KeyCode = KeyCode::E;             // Activer bouclier
-pub const KEY_REVERSE_BOOST: KeyCode = KeyCode::R;      // Recul boosté
-pub const KEY_SLOWMO: KeyCode = KeyCode::S;             // Slow-motion
-pub const KEY_MISSILE: KeyCode = KeyCode::F;            // Missile téléguidé
+pub const KEY_SHIELD: KeyCode = KeyCode::I;             // Activer bouclier
+pub const KEY_REVERSE_BOOST: KeyCode = KeyCode::K;      // Recul boosté
+pub const KEY_SLOWMO: KeyCode = KeyCode::H;             // Slow-motion
+pub const KEY_MISSILE: KeyCode = KeyCode::J;            // Missile téléguidé
 pub const KEY_LASER: KeyCode = KeyCode::L;              // Laser perçant
 pub const KEY_PAUSE: KeyCode = KeyCode::P;              // Mettre en pause
 pub const KEY_MENU: KeyCode = KeyCode::Escape;          // Retour au menu
-pub const KEY_UP: KeyCode = KeyCode::Up;                // Avancer
-pub const KEY_DOWN: KeyCode = KeyCode::Down;            // Reculer
-pub const KEY_LEFT: KeyCode = KeyCode::Left;            // Tourner gauche
-pub const KEY_RIGHT: KeyCode = KeyCode::Right;          // Tourner droite
+pub const KEY_UP: KeyCode = KeyCode::W;                // Avancer
+pub const KEY_DOWN: KeyCode = KeyCode::S;            // Reculer
+pub const KEY_LEFT: KeyCode = KeyCode::A;            // Tourner gauche
+pub const KEY_RIGHT: KeyCode = KeyCode::D;          // Tourner droite
 pub const KEY_START: KeyCode = KeyCode::Enter;          // Commencer la partie
 
 // -----------------------------------------------------------------------------
