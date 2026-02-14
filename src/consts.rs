@@ -7,8 +7,8 @@ use macroquad::prelude::*;
 // -----------------------------------------------------------------------------
 // CONTRÔLES (TOUCHES) - MODIFIABLES ICI
 // -----------------------------------------------------------------------------
-pub const KEY_SHOOT: KeyCode = KeyCode::Space;           // Tirer
-pub const KEY_SHIELD: KeyCode = KeyCode::I;             // Activer bouclier
+pub const KEY_SHOOT: KeyCode = KeyCode::I;           // Tirer
+pub const KEY_SHIELD: KeyCode = KeyCode::U;             // Activer bouclier
 pub const KEY_REVERSE_BOOST: KeyCode = KeyCode::K;      // Recul boosté
 pub const KEY_SLOWMO: KeyCode = KeyCode::H;             // Slow-motion
 pub const KEY_MISSILE: KeyCode = KeyCode::J;            // Missile téléguidé
@@ -24,7 +24,7 @@ pub const KEY_START: KeyCode = KeyCode::Enter;          // Commencer la partie
 // -----------------------------------------------------------------------------
 // CONSTANTES DE GAMEPLAY - ÉQUILIBRAGE
 // -----------------------------------------------------------------------------
-pub const BULLET_SPEED: f32 = 600.0;                    // Vitesse des tirs
+pub const BULLET_SPEED: f32 = 800.0;                    // Vitesse des tirs
 pub const MAX_SHIELD_TIME: f32 = 5.0;                   // Durée max bouclier (secondes)
 pub const MAX_SLOWMO_TIME: f32 = 3.0;                   // Durée max slow-mo (secondes)
 pub const PLAYER_LIVES: i32 = 3;                        // Vies initiales
@@ -43,8 +43,8 @@ pub const MISSILE_TURN_SPEED: f32 = 3.0;                // Agilité du virage
 // -----------------------------------------------------------------------------
 // ARMES - LASER PERÇANT
 // -----------------------------------------------------------------------------
-pub const LASER_DURATION: f32 = 1.5;                    // Durée du tir (secondes)
-pub const LASER_COOLDOWN: f32 = 2.0;                    // Temps de recharge
+pub const LASER_DURATION: f32 = 1.;                    // Durée du tir (secondes)
+pub const LASER_COOLDOWN: f32 = 5.0;                    // Temps de recharge
 pub const LASER_DAMAGE: i32 = 2;                        // Dégâts par impact
 pub const LASER_MAX_PENETRATION: i32 = 5;               // Ennemis traversés max
 
